@@ -1,9 +1,5 @@
 package com.ab.chatexample
 
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
 import androidx.annotation.ColorInt
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -46,7 +42,6 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewModelScope
-import com.ab.chatexample.theme.ChatExampleTheme
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
@@ -272,7 +267,15 @@ class ChatViewModel(
 }
 
 @Composable
-fun ChatScreen(viewModel: ChatViewModel) {
+fun ChatScreen() {
+    val repository = remember { MessagingRepositoryImpl() }
+    val viewModel = remember {
+        ChatViewModel(
+            ObserveIncomingMessagesUseCase(repository),
+            ObserveSendConfirmationsUseCase(repository),
+            SendMessageUseCase(repository)
+        )
+    }
     val state by viewModel.state.collectAsStateWithLifecycle()
     val coroutineScope = rememberCoroutineScope()
     val snackbarHostState = remember { SnackbarHostState() }
@@ -434,24 +437,6 @@ fun ChatInput(
         Spacer(modifier = Modifier.width(8.dp))
         Button(onClick = onSend, enabled = text.isNotBlank() && !isSending) {
             Text("Send")
-        }
-    }
-}
-
-class ChatExampleActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        val repository = MessagingRepositoryImpl()
-        val vm = ChatViewModel(
-            ObserveIncomingMessagesUseCase(repository),
-            ObserveSendConfirmationsUseCase(repository),
-            SendMessageUseCase(repository)
-        )
-        setContent {
-            ChatExampleTheme {
-                ChatScreen(vm)
-            }
         }
     }
 }

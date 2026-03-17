@@ -1,28 +1,20 @@
 package com.ab.androidshowcase
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Button
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.unit.dp
-import com.ab.androidshowcase.ui.theme.AndroidShowcaseTheme
-import com.ab.chatexample.ChatExampleActivity
-import com.ab.couterexamplewithndk.presentation.ui.CounterNDKActivity
-import com.ab.material3expressive.M3ExpressiveActivity
 
+import androidx.compose.material3.Surface
+
+import androidx.compose.ui.Modifier
+
+import com.ab.core.theme.AndroidShowcaseTheme
+import com.ab.navigation.NavBase
+import dagger.hilt.android.AndroidEntryPoint
+
+@AndroidEntryPoint
 class LauncherActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,52 +24,9 @@ class LauncherActivity : ComponentActivity() {
                 Surface(
                     modifier = Modifier.fillMaxSize()
                 ) {
-                    LauncherScreen()
+                    NavBase()
                 }
             }
-        }
-    }
-}
-
-@Composable
-fun LauncherScreen() {
-    val context = LocalContext.current
-    Column(
-        modifier = Modifier
-            .fillMaxSize(),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally,
-    ) {
-        Text(
-            text = "Android ShowCase",
-            style = MaterialTheme.typography.headlineLarge,
-            modifier = Modifier.padding(bottom = 32.dp)
-        )
-        Button(
-            onClick = {
-                val intent = Intent(context, M3ExpressiveActivity::class.java)
-                context.startActivity(intent)
-            }
-        ) {
-            Text(text = "Go to Material3 Expressive")
-        }
-
-        Button(
-            onClick = {
-                val intent = Intent(context, CounterNDKActivity::class.java)
-                context.startActivity(intent)
-            }
-        ) {
-            Text(text = "Go to NDKCounterApp")
-        }
-
-        Button(
-            onClick = {
-                val intent = Intent(context, ChatExampleActivity::class.java)
-                context.startActivity(intent)
-            }
-        ) {
-            Text(text = "Go to ChatExample")
         }
     }
 }
