@@ -1,4 +1,4 @@
-package com.ab.chatexample
+package com.ab.feature.chatexample
 
 import androidx.annotation.ColorInt
 import androidx.compose.foundation.background
