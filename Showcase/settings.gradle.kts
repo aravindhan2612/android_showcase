@@ -21,7 +21,7 @@ dependencyResolutionManagement {
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 rootProject.name = "AndroidShowcase"
 include(":app")
-include(":material3expressive")
+include(":feature:material3expressive")
 include(":core")
 include(":feature:ndkexample")
 include(":feature:chatexample")

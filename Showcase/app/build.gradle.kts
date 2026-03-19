@@ -58,7 +58,7 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.test.manifest)
 
     implementation(projects.navigation)
-    implementation(projects.material3expressive)
+    implementation(projects.feature.material3expressive)
     implementation(projects.core)
     implementation(projects.feature.ndkexample)
     implementation(projects.feature.chatexample)

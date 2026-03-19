@@ -45,7 +45,7 @@ dependencies {
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.bundles.compose)
 
-    implementation(projects.material3expressive)
+    implementation(projects.feature.material3expressive)
     implementation(projects.feature.ndkexample)
     implementation(projects.feature.chatexample)
     implementation(projects.feature.home)
