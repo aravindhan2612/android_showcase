@@ -46,7 +46,7 @@ dependencies {
     implementation(libs.bundles.compose)
 
     implementation(projects.material3expressive)
-    implementation(projects.ndkexample)
+    implementation(projects.feature.ndkexample)
     implementation(projects.feature.chatexample)
     implementation(projects.feature.home)
 
