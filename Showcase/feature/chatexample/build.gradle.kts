@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.ab.chatexample"
+    namespace = "com.ab.feature.chatexample"
     compileSdk {
         version = release(36)
     }

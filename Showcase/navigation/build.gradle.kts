@@ -47,7 +47,7 @@ dependencies {
 
     implementation(projects.material3expressive)
     implementation(projects.counterExampleWithNDK)
-    implementation(projects.chatexample)
+    implementation(projects.feature.chatexample)
     implementation(projects.feature.home)
 
     //navigation

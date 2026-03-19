@@ -61,7 +61,7 @@ dependencies {
     implementation(projects.material3expressive)
     implementation(projects.core)
     implementation(projects.counterExampleWithNDK)
-    implementation(projects.chatexample)
+    implementation(projects.feature.chatexample)
 
     implementation(libs.hilt.android)
     ksp(libs.hilt.android.compiler)
