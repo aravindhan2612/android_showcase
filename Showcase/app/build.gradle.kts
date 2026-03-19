@@ -60,7 +60,7 @@ dependencies {
     implementation(projects.navigation)
     implementation(projects.material3expressive)
     implementation(projects.core)
-    implementation(projects.counterExampleWithNDK)
+    implementation(projects.ndkexample)
     implementation(projects.feature.chatexample)
 
     implementation(libs.hilt.android)

@@ -23,7 +23,7 @@ rootProject.name = "AndroidShowcase"
 include(":app")
 include(":material3expressive")
 include(":core")
-include(":counterExampleWithNDK")
+include(":ndkexample")
 include(":feature:chatexample")
 include(":navigation")
 include(":feature:home")
