@@ -6,9 +6,10 @@ import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.runtime.rememberSaveableStateHolderNavEntryDecorator
 import androidx.navigation3.ui.NavDisplay
+import com.ab.core.common.Route
 import com.ab.feature.chatexample.ChatScreen
 import com.ab.couterexamplewithndk.presentation.ui.screens.counter.CounterScreen
-import com.ab.feature.home.screen.HomeScreen
+import com.ab.feature.home.HomeScreen
 import com.ab.material3expressive.screens.Material3ExpressiveHomeScreen
 
 @Composable
@@ -27,14 +28,8 @@ fun NavBase() {
         entryProvider = entryProvider {
             entry<Route.Home> {
                 HomeScreen(
-                    navToMaterial3Expressive = {
-                        backStack.add(Route.Material3Expressive)
-                    },
-                    navToNDKExample = {
-                        backStack.add(Route.NDKExample)
-                    },
-                    navToChatExample = {
-                        backStack.add(Route.ChatExample)
+                    navigate = { route ->
+                        backStack.add(route)
                     }
                 )
             }

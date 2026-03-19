@@ -1,7 +1,8 @@
-package com.ab.navigation
+package com.ab.core.common
 
 import androidx.navigation3.runtime.NavKey
 import kotlinx.serialization.Serializable
+
 
 @Serializable
 sealed interface Route : NavKey {

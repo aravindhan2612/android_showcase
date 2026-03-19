@@ -49,6 +49,7 @@ dependencies {
     implementation(projects.feature.ndkexample)
     implementation(projects.feature.chatexample)
     implementation(projects.feature.home)
+    implementation(projects.core)
 
     //navigation
     implementation(libs.androidx.navigation3.ui)
