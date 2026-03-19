@@ -43,15 +43,12 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     //compose
     implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.androidx.compose.ui)
-    implementation(libs.androidx.compose.ui.graphics)
-    implementation(libs.androidx.compose.ui.tooling.preview)
-    implementation(libs.androidx.compose.material3)
-
+    implementation(libs.bundles.compose)
 
     implementation(projects.material3expressive)
     implementation(projects.counterExampleWithNDK)
     implementation(projects.chatexample)
+    implementation(projects.feature.home)
 
     //navigation
     implementation(libs.androidx.navigation3.ui)

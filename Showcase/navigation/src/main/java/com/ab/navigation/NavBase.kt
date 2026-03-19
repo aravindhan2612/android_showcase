@@ -8,6 +8,7 @@ import androidx.navigation3.runtime.rememberSaveableStateHolderNavEntryDecorator
 import androidx.navigation3.ui.NavDisplay
 import com.ab.chatexample.ChatScreen
 import com.ab.couterexamplewithndk.presentation.ui.screens.counter.CounterScreen
+import com.ab.feature.home.screen.HomeScreen
 import com.ab.material3expressive.screens.Material3ExpressiveHomeScreen
 
 @Composable
