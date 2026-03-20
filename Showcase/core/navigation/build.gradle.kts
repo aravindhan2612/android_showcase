@@ -1,14 +1,12 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.ksp)
-    alias(libs.plugins.hilt.android)
     alias(libs.plugins.jetbrains.kotlin.serialization)
+    alias(libs.plugins.kotlin.compose)
 }
 
 android {
-    namespace = "com.ab.feature.home"
+    namespace = "com.ab.navigation"
     compileSdk {
         version = release(36)
     }
@@ -40,19 +38,25 @@ android {
 
 dependencies {
     implementation(libs.androidx.core.ktx)
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
     //compose
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.bundles.compose)
 
-    // navigation
-    implementation(libs.androidx.navigation3.runtime)
-    implementation(libs.kotlinx.serialization.core)
-
-    //hilt
-    implementation(libs.hilt.android)
-    ksp(libs.hilt.android.compiler)
-    implementation(libs.hilt.navigation.compose)
-
+    implementation(projects.feature.material3expressive)
+    implementation(projects.feature.ndkexample)
+    implementation(projects.feature.chatexample)
+    implementation(projects.feature.parallelapiexample)
+    implementation(projects.feature.home)
     implementation(projects.core.common)
+
+    //navigation
+    implementation(libs.androidx.navigation3.ui)
+    implementation(libs.androidx.navigation3.runtime)
+    implementation(libs.androidx.lifecycle.viewmodel.navigation3)
+    implementation(libs.androidx.material3.adaptive.navigation3)
+    implementation(libs.kotlinx.serialization.core)
 
 }

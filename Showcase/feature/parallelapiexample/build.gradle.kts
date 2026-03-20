@@ -4,11 +4,10 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt.android)
-    alias(libs.plugins.jetbrains.kotlin.serialization)
 }
 
 android {
-    namespace = "com.ab.feature.home"
+    namespace = "com.ab.parallelapiexample"
     compileSdk {
         version = release(36)
     }
@@ -44,15 +43,7 @@ dependencies {
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.bundles.compose)
 
-    // navigation
-    implementation(libs.androidx.navigation3.runtime)
-    implementation(libs.kotlinx.serialization.core)
-
-    //hilt
     implementation(libs.hilt.android)
     ksp(libs.hilt.android.compiler)
     implementation(libs.hilt.navigation.compose)
-
-    implementation(projects.core.common)
-
 }

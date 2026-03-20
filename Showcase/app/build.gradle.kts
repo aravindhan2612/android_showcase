@@ -56,12 +56,14 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
-
-    implementation(projects.navigation)
+    implementation(projects.core.common)
+    implementation(projects.core.ui)
+    implementation(projects.core.network)
+    implementation(projects.core.navigation)
     implementation(projects.feature.material3expressive)
-    implementation(projects.core)
     implementation(projects.feature.ndkexample)
     implementation(projects.feature.chatexample)
+
 
     implementation(libs.hilt.android)
     ksp(libs.hilt.android.compiler)

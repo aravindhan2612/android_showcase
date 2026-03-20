@@ -1,14 +1,10 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.ksp)
-    alias(libs.plugins.hilt.android)
-    alias(libs.plugins.jetbrains.kotlin.serialization)
 }
 
 android {
-    namespace = "com.ab.feature.home"
+    namespace = "com.ab.network"
     compileSdk {
         version = release(36)
     }
@@ -40,19 +36,9 @@ android {
 
 dependencies {
     implementation(libs.androidx.core.ktx)
-    //compose
-    implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.bundles.compose)
-
-    // navigation
-    implementation(libs.androidx.navigation3.runtime)
-    implementation(libs.kotlinx.serialization.core)
-
-    //hilt
-    implementation(libs.hilt.android)
-    ksp(libs.hilt.android.compiler)
-    implementation(libs.hilt.navigation.compose)
-
-    implementation(projects.core.common)
-
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
 }

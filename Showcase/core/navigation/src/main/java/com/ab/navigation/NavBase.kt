@@ -1,0 +1,53 @@
+package com.ab.navigation
+
+import androidx.compose.runtime.Composable
+import androidx.lifecycle.viewmodel.navigation3.rememberViewModelStoreNavEntryDecorator
+import androidx.navigation3.runtime.entryProvider
+import androidx.navigation3.runtime.rememberNavBackStack
+import androidx.navigation3.runtime.rememberSaveableStateHolderNavEntryDecorator
+import androidx.navigation3.ui.NavDisplay
+import com.ab.common.Route
+import com.ab.feature.chatexample.ChatScreen
+import com.ab.couterexamplewithndk.presentation.ui.screens.counter.CounterScreen
+import com.ab.feature.home.HomeScreen
+import com.ab.material3expressive.screens.Material3ExpressiveHomeScreen
+import com.ab.parallelapiexample.presentation.ParallelApiSampleScreen
+
+@Composable
+fun NavBase() {
+    val backStack = rememberNavBackStack(Route.Home)
+
+    NavDisplay(
+        backStack = backStack,
+        onBack = {
+            backStack.removeLastOrNull()
+        },
+        entryDecorators = listOf(
+            rememberSaveableStateHolderNavEntryDecorator(),
+            rememberViewModelStoreNavEntryDecorator()
+        ),
+        entryProvider = entryProvider {
+            entry<Route.Home> {
+                HomeScreen(
+                    navigate = { route ->
+                        backStack.add(route)
+                    }
+                )
+            }
+            entry<Route.Material3Expressive> {
+                Material3ExpressiveHomeScreen()
+            }
+            entry<Route.NDKExample> {
+                CounterScreen()
+            }
+
+            entry<Route.ChatExample> {
+                ChatScreen()
+            }
+
+            entry<Route.ParallelApiExample> {
+                ParallelApiSampleScreen()
+            }
+        }
+    )
+}

@@ -10,8 +10,8 @@ import androidx.compose.material3.Surface
 
 import androidx.compose.ui.Modifier
 
-import com.ab.core.theme.AndroidShowcaseTheme
 import com.ab.navigation.NavBase
+import com.ab.ui.theme.AndroidShowcaseTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

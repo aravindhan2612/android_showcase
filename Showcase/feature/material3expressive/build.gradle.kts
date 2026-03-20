@@ -46,5 +46,5 @@ dependencies {
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.bundles.compose)
 
-    implementation(projects.core)
+    implementation(projects.core.ui)
 }
