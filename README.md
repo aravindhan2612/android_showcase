@@ -43,12 +43,6 @@ This repository is organized to facilitate easy navigation and contribution. Her
 
 Each project folder contains source code, a README file specific to that project, and relevant documentation.
 
-## Language Composition
-The repository is composed of the following programming languages:
-- **HTML**: 48.1%
-- **Kotlin**: 47.6%
-- **Java**: 4%
-- **Other**: 0.3%
 
 This structure and language composition reflects a strong focus on modern Android development practices, utilizing Kotlin as the primary programming language while still integrating necessary HTML for any UI components.
 
